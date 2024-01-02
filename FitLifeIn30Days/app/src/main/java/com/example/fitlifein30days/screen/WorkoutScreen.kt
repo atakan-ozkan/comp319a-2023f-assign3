@@ -1,4 +1,4 @@
-package com.example.fitlifein30days
+package com.example.fitlifein30days.screen
 
 import android.content.Context
 import androidx.compose.foundation.Image
@@ -24,9 +24,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.fitlifein30days.user.UserViewModel
+import com.example.fitlifein30days.workout.WorkoutViewModel
 
 @Composable
-fun WorkoutFlowScreen(day: Int,navController: NavController,userViewModel: UserViewModel,workoutViewModel: WorkoutViewModel) {
+fun WorkoutFlowScreen(day: Int, navController: NavController, userViewModel: UserViewModel, workoutViewModel: WorkoutViewModel) {
     val workouts = workoutViewModel.getWorkoutSchedule(day,userViewModel.user.gender) ?: emptyList()
 
     var currentWorkoutIndex by remember { mutableStateOf(0) }
@@ -79,7 +81,7 @@ fun WorkoutFlowScreen(day: Int,navController: NavController,userViewModel: UserV
 }
 
 @Composable
-fun WorkoutsResultScreen(day: Int, navController: NavController, userViewModel: UserViewModel,context: Context) {
+fun WorkoutsResultScreen(day: Int, navController: NavController, userViewModel: UserViewModel, context: Context) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -106,6 +108,6 @@ fun WorkoutsResultScreen(day: Int, navController: NavController, userViewModel: 
     }
 }
 
-private fun saveData(saveMessage: String,userViewModel: UserViewModel,context: Context) {
+private fun saveData(saveMessage: String, userViewModel: UserViewModel, context: Context) {
     userViewModel.saveUser(context,userViewModel.user,saveMessage)
 }

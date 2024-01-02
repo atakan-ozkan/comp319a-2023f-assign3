@@ -1,4 +1,4 @@
-package com.example.fitlifein30days
+package com.example.fitlifein30days.user
 
 import android.content.Context
 import android.widget.Toast

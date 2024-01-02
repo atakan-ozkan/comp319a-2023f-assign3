@@ -1,4 +1,4 @@
-package com.example.fitlifein30days
+package com.example.fitlifein30days.screen
 import android.content.Context
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -25,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.example.fitlifein30days.user.UserViewModel
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -197,7 +198,7 @@ fun HeightScreen(navController: NavHostController, userViewModel: UserViewModel)
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun WeightScreen(navController: NavHostController, userViewModel: UserViewModel,context: Context) {
+fun WeightScreen(navController: NavHostController, userViewModel: UserViewModel, context: Context) {
     var weight by remember { mutableStateOf("") }
     var isWeightValid by remember { mutableStateOf(false) }
     Box(
@@ -238,6 +239,6 @@ fun WeightScreen(navController: NavHostController, userViewModel: UserViewModel,
         }
     }
 }
-private fun saveData(saveMessage: String,userViewModel: UserViewModel,context: Context) {
+private fun saveData(saveMessage: String, userViewModel: UserViewModel, context: Context) {
     userViewModel.saveUser(context,userViewModel.user,saveMessage)
 }

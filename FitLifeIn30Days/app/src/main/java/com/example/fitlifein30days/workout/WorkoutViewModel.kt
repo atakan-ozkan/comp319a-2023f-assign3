@@ -1,7 +1,8 @@
-package com.example.fitlifein30days
+package com.example.fitlifein30days.workout
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
+import com.example.fitlifein30days.R
 import org.xmlpull.v1.XmlPullParser
 import java.io.IOException
 

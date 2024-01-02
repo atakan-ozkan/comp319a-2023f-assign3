@@ -1,4 +1,4 @@
-package com.example.fitlifein30days
+package com.example.fitlifein30days.user
 
 data class UserModel(
     var name: String,

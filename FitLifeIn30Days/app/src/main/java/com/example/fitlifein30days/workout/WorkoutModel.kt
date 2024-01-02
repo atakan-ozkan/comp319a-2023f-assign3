@@ -1,4 +1,4 @@
-package com.example.fitlifein30days
+package com.example.fitlifein30days.workout
 
 data class WorkoutModel(
     val imageResourceId: Int,
